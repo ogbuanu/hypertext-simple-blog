@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View post</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+    <%- include("partials/header.ejs") %> 
+
+ <section class="container mt-5 pt-5">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Ikenna</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Greate post</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link text-warning">Edit</a>
+          <a href="#" class="card-link text-danger">Delete</a>
+        </div>
+    </div>
+ </section>
+ <hr>
+
+ <section class="container mt-5">
+    <form action="/add-comment" method="post">
+        <textarea name="comment" id="" cols="10" rows="2"></textarea> <br>
+        <button class="btn btn-warning" type="submit">Add</button>
+    </form>
+    <div class="card mt-5 mb-5" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Ikenna</h5>
+       
+          <p class="card-text">Nice post.</p>
+          <a href="#" class="card-link">Delete</a>
+        
+        </div>
+      </div>
+ </section> 
+
+    <%- include("partials/footer.ejs") %> 
+
+</body>
+</html>
