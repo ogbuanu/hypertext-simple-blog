@@ -1,6 +1,7 @@
 const {userModel} = require("../models/models")
 const signupController = (req, res) => { 
-    res.render("pages/auth/signup")
+    const message = req.query.message || null
+    res.render("pages/auth/signup", {message})
 }
 const signupControllerPost = (req, res) => {
     if (req.body.username && req.body.email && req.body.password) {
@@ -16,7 +17,7 @@ const signupControllerPost = (req, res) => {
     })
         
     }
-    res.redirect("/auth/signup")
+    res.redirect("/auth/signup?message=error")
 }
 
 module.exports = {
