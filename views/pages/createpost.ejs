@@ -11,12 +11,12 @@
 <body>
   <%- include("partials/header.ejs") %> 
 
-    <form style="width: 80%;margin: auto;padding-top:200px;"  action="">
+    <form style="width: 80%;margin: auto;padding-top:200px;"  method="post">
     <div class="mb-3">
-        <input style="font-weight:bolder;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+        <input style="font-weight:bolder;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" name="title" minlength="5">
       </div>
       <div class="mb-3">
-        <textarea style="font-weight:bolder;" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell your story"></textarea>
+        <textarea style="font-weight:bolder;" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell your story" minlength="10" name="post"></textarea>
         
       </div>
       <div class="col-12">
