@@ -1,0 +1,29 @@
+<!-- title,body,post -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>create post</title>
+</head>
+<body>
+  <%- include("partials/header.ejs") %> 
+
+    <form style="width: 80%;margin: auto;padding-top:200px;"  action="">
+    <div class="mb-3">
+        <input style="font-weight:bolder;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+      </div>
+      <div class="mb-3">
+        <textarea style="font-weight:bolder;" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell your story"></textarea>
+        
+      </div>
+      <div class="col-12">
+        <button style="margin-left:800px ;"  class="btn btn-primary" type="submit">Post</button>
+      </div>
+    </form>
+    <%- include("partials/footer.ejs") %> 
+      <script src="/js/bootstrap.bundle.js"></script>
+</body>
+</html>

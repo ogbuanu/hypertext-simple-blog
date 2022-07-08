@@ -1,5 +1,5 @@
 const createpostController = (req, res) => { 
-    res.render("createpost")
+    res.render("pages/createpost")
 }
 
 module.exports = {

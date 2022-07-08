@@ -9,7 +9,7 @@
 </head>
 <body style="margin-bottom:50px;background-color: purple;color: white;">
     <h1 style="padding-top:50px;text-align: center;">Sign Up Page</h1>
-    <form style="width:50% ;margin:auto;"  class="row g-2 needs-validation" novalidate>
+    <form style="width:50% ;margin:auto;"  class="row g-2 needs-validation" method="post" >
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Username</label>
         <input type="text" name="username" placeholder="enter username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -25,20 +25,13 @@
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" name="password" placeholder="enter password" class="form-control" id="exampleInputPassword1">
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
+        
         <button type="submit" class="btn btn-primary">Submit</button>
       
       </form>
+      <p class="text-center">Already registered? click <a href="/auth/signin">here</a> to login</p>
 
-      <footer style="color: black;font-weight:bolder;">
-        <div style="margin-top: 100px;" class="text-center">
-            &copy; Copyright. All Right Reserved. HYPERTEXT BADGE
-        </div>
-
-    </footer>
+      <%- include("../partials/footer.ejs") %> 
 
     <script src="/js/bootstrap.bundle.js"></script>
 </body>
