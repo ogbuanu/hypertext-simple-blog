@@ -1,11 +1,26 @@
 const express = require("express")
 const {homeRoute} = require("../routes/home")
-
+const { signupRoute } = require("../routes/signup")
+const { signinRoute } = require("../routes/signin")
+const {createpostRoute} = require("../routes/createpost")
+const {editPostRoute} = require("../routes/editpost")
+const { viewPostRoute } = require("../routes/viewpost")
+const { connectdb } = require("../models")
+const { userModel, postModel } = require("../models/models")
+const bodyParser = require("body-parser")
+connectdb()
 const app = express()
-
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(homeRoute)
+app.use("/auth",signupRoute)
+app.use("/auth",signinRoute)
+app.use(createpostRoute)
+app.use(editPostRoute)
+app.use(viewPostRoute)
+
 
 
 app.listen(3000)

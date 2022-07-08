@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Sign UP</title>
+</head>
+<body style="margin-bottom:50px;background-color: purple;color: white;">
+    <h1 style="padding-top:50px;text-align: center;">Sign Up Page</h1>
+    <form style="width:50% ;margin:auto;"  class="row g-2 needs-validation" method="post" >
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        <input type="text" name="username" placeholder="enter username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+       
+      </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="email" placeholder="enter email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+         
+        </div>
+       
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password" placeholder="enter password" class="form-control" id="exampleInputPassword1">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      
+      </form>
+      <p class="text-center">Already registered? click <a href="/auth/signin">here</a> to login</p>
+
+      <%- include("../partials/footer.ejs") %> 
+
+    <script src="/js/bootstrap.bundle.js"></script>
+</body>
+</html>

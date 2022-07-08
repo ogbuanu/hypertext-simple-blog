@@ -8,25 +8,7 @@
     <title>Home</title>
 </head>
 <body>
-    <head>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#"><b>HYPERTEXTBLOG</b></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse  container-fluid justify-content-center d-lg-flex" id="navbarNavAltMarkup">
-                <div class="navbar-nav ">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  <a class="nav-link" href="#">Create Post</a>
-                  <a class="nav-link" href="#">Register</a>
-                  <a class="nav-link" href="#" >Login</a>
-                </div>
-              </div>
-            </div>
-          </nav>
-    </head>
-
+  <%- include("pages/partials/header.ejs") %> 
     <main>
 
         <section class="p-5">
@@ -72,12 +54,7 @@
         </section>
 
     </main>
-    <footer>
-        <div class="text-center">
-            &copy; Copyright. All Right Reserved. HYPERTEXT BADGE
-        </div>
-
-    </footer>
+<%- include("pages/partials/footer.ejs") %> 
 
     <script src="/js/bootstrap.bundle.js"></script>
 </body>
