@@ -10,6 +10,15 @@
 <body style="margin-bottom:50px;background-color: purple;color: white;">
     <h1 style="padding-top:50px;text-align: center;">Sign Up Page</h1>
     <form style="width:50% ;margin:auto;"  class="row g-2 needs-validation" method="post" >
+      <% if (message) { %>
+       <% if (message == "alreadyExists") { %>
+        <p class="text-center text-danger">Username taken!</p>
+        <% } else if (message == "error") { %>
+        <p class="text-center text-danger">Invalid input!</p>
+         
+       <% } %>
+       
+      <% } %>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Username</label>
         <input type="text" name="username" placeholder="enter username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

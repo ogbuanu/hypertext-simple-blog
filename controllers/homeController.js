@@ -1,6 +1,7 @@
 
 const homeController = (req, res) => { 
-    res.render("index")
+    const user = req.session.user || null
+    res.render("index", {user})
 }
 
 module.exports = {

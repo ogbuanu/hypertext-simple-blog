@@ -9,7 +9,10 @@
 </head>
 <body style="margin-bottom:50px;background-color: purple;color: white;">
     <h1 style="padding-top:50px;text-align: center;">Sign In Page</h1>
-    <form style="width:50% ;margin:auto;"  class="row g-2 needs-validation" novalidate>
+    <form style="width:50% ;margin:auto;"  class="row g-2 needs-validation" novalidate method="post">
+      <% if (message) { %>
+       <p class="text-center text-danger"> Invalid username and password </p>
+      <% } %>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Username</label>
         <input type="text" name="username" placeholder="enter username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
