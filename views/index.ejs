@@ -15,7 +15,7 @@
            <% if (post.length) { %>
 
             <% post.forEach(element => { %>
-              <div class="card text-center ">
+              <div class="card text-center mb-5">
                 <div class="card-header">
                   <%= element.owner.username %> 
                 </div>
@@ -32,7 +32,7 @@
                   <a href="/viewpost/<%= element.id %> " class="btn btn-primary">View more</a>
                 </div>
                 <div class="card-footer text-muted">
-                  2 days ago
+                 
                 </div>
               </div>
             <% }) %>

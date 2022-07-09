@@ -17,8 +17,8 @@
             <h6 class="card-subtitle mb-2 text-muted"><%= post.title %> </h6>
             <p class="card-text"><%= post.body %> .</p>
             <% if (post.owner._id == user._id) { %>
-              <a href="#" class="card-link text-warning">Edit</a>
-              <a href="#" class="card-link text-danger">Delete</a>
+              <a href="/editpost/<%= post.id %> " class="card-link text-warning">Edit</a>
+              <a href="/deletepost/<%= post.id %> " class="card-link text-danger">Delete</a>
             <% } %>
           </div>
       </div>
@@ -30,15 +30,25 @@
         <textarea name="comment" id="" cols="10" rows="2"></textarea> <br>
         <button class="btn btn-warning" type="submit">Add</button>
     </form>
-    <div class="card mt-5 mb-5" style="width: 18rem;">
+    <h1>comments (<%= post.comments.length %> )</h1>
+    <% if ( post.comments.length ) { %>
+         <% post.comments.forEach(comment => { %>
+      <div class="card mt-5 mb-5" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Ikenna</h5>
+          <h5 class="card-title"><%= comment.owner.username %> </h5>
        
-          <p class="card-text">Nice post.</p>
-          <a href="#" class="card-link">Delete</a>
+          <p class="card-text"><%= comment.body %> </p>
+          <% if (comment.owner._id == user._id) { %>
+            <a href="/deletecomment/<%= post.id %>/<%= comment.id %>  " class="card-link text-danger">Delete</a>
+          <% } %>
         
         </div>
       </div>
+    <% }) %>
+    <% } else { %>
+     <h1>No comments yet</h1>
+    <% } %>
+
  </section> 
 
     <%- include("partials/footer.ejs") %> 

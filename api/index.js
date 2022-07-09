@@ -12,6 +12,8 @@ const { userModel, postModel } = require("../models/models")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const { commentRoute } = require("../routes/createComment")
+const { deletePostRouter } = require("../routes/deletePost")
+const { deleteCommentRouter } = require("../routes/deleteComment")
 // require("dotenv")
 
 connectdb()
@@ -22,13 +24,16 @@ app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(session({secret: "dev"}))
 app.use(homeRoute)
+app.use("/auth", signoutRoute)
 app.use("/auth",redirectIfLoggedIn, signupRoute)
 app.use("/auth", redirectIfLoggedIn, signinRoute)
-app.use("/auth", signoutRoute)
 app.use(sessionAuthorization,createpostRoute)
 app.use(sessionAuthorization, editPostRoute)
+app.use(sessionAuthorization, deletePostRouter)
+app.use(sessionAuthorization, deleteCommentRouter)
 app.use(viewPostRoute)
 app.use(commentRoute)
+
 
 
 
